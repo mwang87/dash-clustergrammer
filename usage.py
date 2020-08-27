@@ -22,7 +22,7 @@ app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
 
 print('loading JSON Clustergrammer data...')
-with open('../single-cell-hackathon/src/dash/example_clustergrammer.json', 'r') as f:
+with open('example_clustergrammer.json', 'r') as f:
     network_data = json.load(f)
 print('done')
 

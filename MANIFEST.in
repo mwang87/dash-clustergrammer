@@ -1,0 +1,7 @@
+include dash_clustergrammer/dash_clustergrammer.min.js
+include dash_clustergrammer/dash_clustergrammer.min.js.map
+include dash_clustergrammer/metadata.json
+include dash_clustergrammer/package-info.json
+include README.md
+include LICENSE
+include package.json

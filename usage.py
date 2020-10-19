@@ -2,6 +2,7 @@ import dash_clustergrammer
 import dash
 from dash.dependencies import Input, Output
 import dash_html_components as html
+import pandas as pd
 
 import json
 
@@ -21,11 +22,33 @@ app = dash.Dash(
 app.scripts.config.serve_locally = True
 app.css.config.serve_locally = True
 
+def _load_json():
+    with open('example_clustergrammer.json', 'r') as f:
+        network_data = json.load(f)
+    
+    return network_data
+
+# utilizing code from 
+# https://clustergrammer.readthedocs.io/matrix_format_io.html#matrix-format-io
+# https://clustergrammer.readthedocs.io/clustergrammer_py.html#clustergrammer-py
+def _load_toy_matrix():
+    # make network object and load file
+    from clustergrammer2 import Network
+    import json
+    net = Network()
+    net.load_file('data/example_tsv.txt')
+
+    # calculate clustering using default parameters
+    net.cluster()
+
+    return json.loads(net.export_net_json())
+
+
 print('loading JSON Clustergrammer data...')
-with open('example_clustergrammer.json', 'r') as f:
-#with open('toy_clustergrammer.json', 'r') as f:
-    network_data = json.load(f)
-print('done')
+network_data = _load_json()
+network_data = _load_toy_matrix()
+
+print('done loading')
 
 app.layout = html.Div([
     html.Link(

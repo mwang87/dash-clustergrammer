@@ -17,17 +17,7 @@ Note that the component's package is the directory ``dash_clustergrammer``. This
 
 ## Network Data Format
 
-This network data as seen in the ```example_clustergrammer.json``` file, the format contains several sections:
-
-1. row_nodes
-1. links
-1. views
-
-### row_nodes
-
-This describes all the row data, with the fields:
-
-1. 
+This network data as seen in the ```example_clustergrammer.json``` file, the format definition can be found [here](https://clustergrammer.readthedocs.io/clustergrammer_js.html#example-pages).
 
 ## Contributing
 

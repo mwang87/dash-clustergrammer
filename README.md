@@ -15,6 +15,20 @@ The ``usage.py`` script provides an example for how to use this component in a D
 
 Note that the component's package is the directory ``dash_clustergrammer``. This package's location can be added to your ``PYTHONPATH`` in order to incorporate Clustergrammer into your application.
 
+## Network Data Format
+
+This network data as seen in the ```example_clustergrammer.json``` file, the format contains several sections:
+
+1. row_nodes
+1. links
+1. views
+
+### row_nodes
+
+This describes all the row data, with the fields:
+
+1. 
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)

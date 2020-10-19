@@ -23,6 +23,7 @@ app.css.config.serve_locally = True
 
 print('loading JSON Clustergrammer data...')
 with open('example_clustergrammer.json', 'r') as f:
+#with open('toy_clustergrammer.json', 'r') as f:
     network_data = json.load(f)
 print('done')
 
@@ -38,10 +39,12 @@ app.layout = html.Div([
     )
 ])
 
-#@app.server.route('/static/<path>')
-#def static_file(path):
-#    static_folder = os.path.join(os.getcwd(), 'static')
-#    return send_from_directory(static_folder, path)
+@app.server.route('/static/<path>')
+def static_file(path):
+    import os
+    from flask import send_from_directory
+    static_folder = os.path.join(os.getcwd(), 'static')
+    return send_from_directory(static_folder, path)
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host="0.0.0.0", debug=True)
